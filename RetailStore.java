@@ -1,3 +1,68 @@
+class Customer {
+    private String name;
+    private String email;
+
+    public Customer(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+}
+
+class Product {
+    private String name;
+    private double price;
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+}
+
+class Order {
+    private Customer customer;
+    private Product product;
+    private int quantity;
+
+    public Order(Customer customer, Product product, int quantity) {
+        this.customer = customer;
+        this.product = product;
+        this.quantity = quantity;
+    }
+
+    public boolean confirmOrder() {
+        // Simulate confirmation logic (always true for demo)
+        return true;
+    }
+
+    public double getTotalPrice() {
+        return product.getPrice() * quantity;
+    }
+
+    public void printOrderSummary() {
+        System.out.println("Order Summary:");
+        System.out.println("Customer: " + customer.getName());
+        System.out.println("Product: " + product.getName());
+        System.out.println("Quantity: " + quantity);
+        System.out.println("Total Price: $" + getTotalPrice());
+    }
+}
+
 public class RetailStore {
     public static void main(String[] args) {
         Product product = new Product("Laptop", 1200.00);
